@@ -1,0 +1,46 @@
+﻿using System;
+
+namespace IterativeStatements
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Asks user to enter an integer value
+            Console.WriteLine("Please enter an integer value between 1 and 100");
+
+            try
+            {
+                // Gathers user's entered input
+                string input = Console.ReadLine();
+
+                // Parses user's entered input to an integer
+                int input_value = int.Parse(input);
+
+                //Executes a For loop if the user input is between 0 and 100
+                if ((input_value >= 1) && (input_value <= 100))
+                {
+                    Console.WriteLine("Executing a For Loop!");
+                    Console.WriteLine("The For Loop will iterate " + input_value.ToString() + " times.");
+
+                    // For loop
+                    for (int i = 0; i < input_value; i++)
+                    {
+                        Console.WriteLine("You have entered " + input_value.ToString() +". The current integer value in the loop is " + i.ToString() + ".");
+                    }
+
+                    Console.WriteLine("Press any key to exit the program.");
+                    Console.ReadKey(true);
+
+                }
+            }
+
+            catch
+            {
+                Console.WriteLine("Please enter a valid integer value and running the program again.");
+                Console.WriteLine("Press any key to exit the program.");
+                Console.ReadKey(true);
+            }
+        }
+    }
+}
